@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
-@WebServlet(name = "employees", urlPatterns = "/employees")
+@WebServlet(name ="employee", urlPatterns = "/employee")
 public class EmployeesServlet extends HttpServlet {
 
     public static final int PAGE_SIZE = 100;
