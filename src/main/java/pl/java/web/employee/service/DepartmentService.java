@@ -1,22 +1,18 @@
 package pl.java.web.employee.service;
 
-import org.hibernate.query.Query;
 import pl.java.web.employee.model.Department;
 
 import java.util.List;
 
-public class DepartmentService extends AbstractExecuteOperationService<Department>{
+public class DepartmentService extends ServiceDao{
 
     public List<Department> getAllDepartments(){
-        Operation<List<Department>> operation = (session -> {
-            Query<Department> query = session.createQuery("SELECT d from Department d", Department.class);
-            List<Department> resultList = query.getResultList();
-            return resultList;
-        });
-        return executeOperation(operation);
+        return  this.executeForList("SELECT d from Department d", Department.class);
+
     }
 
-    public Department find(String deptNo) {
+   /*public Department find(String deptNo) {
+        return this.execute
         Operation<Department> operation = (session -> {
             Query<Department> query = session.createQuery(
                     "SELECT d FROM Department d WHERE d.deptNo=:deptNo", Department.class);
@@ -24,5 +20,5 @@ public class DepartmentService extends AbstractExecuteOperationService<Departmen
             return query.uniqueResult();
         });
         return executeOperation(operation);
-    }
+    }*/
 }

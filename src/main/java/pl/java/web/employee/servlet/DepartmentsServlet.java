@@ -15,7 +15,7 @@ import java.util.Objects;
 
 @WebServlet(name="departments", urlPatterns="/departments")
 public class DepartmentsServlet extends HttpServlet {
-
+/*
     private DepartmentService departmentService = new DepartmentService();
 
     @Override
@@ -44,5 +44,5 @@ public class DepartmentsServlet extends HttpServlet {
         }
         departmentService.save(department);
         resp.sendRedirect("/employee/departments");
-    }
+    }*/
 }
